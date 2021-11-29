@@ -10,4 +10,11 @@ Constraints
 0 <= input.length <= 100
 */
 
-const paranthesesCheck = (input) => {};
+const paranthesesCheck = (input) => {
+  const filter = /\w+\b/g;
+  const result = filter.exec(input);
+
+  return result;
+};
+
+console.log(paranthesesCheck("hello my 2g"));
