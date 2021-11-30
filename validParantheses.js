@@ -20,7 +20,6 @@ const paranthesesCheck = (input) => {
       }
       opened--;
     } else opened++;
-    console.log(opened);
   }
   if (opened > 0) return false;
   else return true;
