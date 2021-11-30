@@ -11,10 +11,19 @@ Constraints
 */
 
 const paranthesesCheck = (input) => {
-  const filter = /\w+\b/g;
-  const result = filter.exec(input);
-
-  return result;
+  let opened = 0;
+  if (input === '') return true;
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === ')') {
+      if (opened === 0) {
+        return false;
+      }
+      opened--;
+    } else opened++;
+    console.log(opened);
+  }
+  if (opened > 0) return false;
+  else return true;
 };
 
-console.log(paranthesesCheck("hello my 2g"));
+console.log(paranthesesCheck(''));
